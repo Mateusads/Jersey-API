@@ -22,16 +22,77 @@ Teste de candidatos para vagas de desenvolvedores para Cingo (www.cingo.com.br).
   "id" : 2222,
   "content" : "org.hibernate.tool.hbm2ddl.TableMetadata: <init> indexes: [primary]",
   "occurrences" : 296
-}, {
-  "id" : 7508,
-  "content" : "com.cingo.cingohc.sistemas.util.OuterQuery$2: execute Parametros aplicados: ",
-  "occurrences" : 226
-}, {
-  "id" : 7510,
-  "content" : "com.cingo.cingohc.sistemas.util.OuterQuery: getObjects Retornando 1 registros do SQL",
-  "occurrences" : 176
-}, {
-  "id" : 2220,
-  "content" : "org.hibernate.tool.hbm2ddl.TableMetadata: <init> columns: [neoid]",
-  "occurrences" : 125
 }]
+
+# Alterações feitas...
+
+Para rodar o projeto com o Tomcat 9 em uma máquina com o OS Linux Mint 20.1 Ulyssa.
+
+Foi incluído a dependência no Maven [jakarta.xml.bind-api] para remover o erro de servlet no deploy.
+Alterado no front(Arquivo HTML e JavaScript) o caminho, e pronto front já estava consumindo a API como esperado.
+
+Alguns pacotes descrito abaixo foram criados para a melhor divisão da API(MVC).
+1. package com.cingo.logstore.resource.dto
+2. package com.cingo.logstore.resource.mapper
+3. package com.cingo.logstore.services
+4. package com.cingo.logstore.services.exceptions
+
+# DTO- Data Transfer Object
+Foi criado duas classes dentro do pacote DTO, LogRequestDTO e LogResponseDTO.
+Essas classes servem como proteção de dados para API, já que se exibir a entidade diretamente pode ser entrada para um usuário malicioso.
+Elas servem para caso algo da entidade for alterado e DTO terá que ser revisto para se adequar sem risco de expor dados.
+* LogRequestDTO - É uma classe que recebe os dados vindo do usuário que vai consumir a API, então deve receber somente o necessário que é somente o dado de entrada (content).
+O ID e occurrences são gerados pela própria API.
+* LogResponseDTO - É a classe que devolve os dados da API, escolhendo somente os dados necessários sem correr riscos de vazar algo.
+Nesse caso foi usado todos os atributos da entidade Log, já que todos eles são necessários para o usuário.
+
+
+# Mapper.
+* LogMapper - Criado para que possa converter os DTOs em entidades, e as entidades ou suas listas em DTOs.
+
+# Service
+Comum em API MVC o service deve conter a lógica da regra de negócio.
+* LogService - Nesse caso além de chamar o repository para salvar, alterar e deletar dados, serve para chamar as exceções de quando haver algum erro.
+
+# Exceptions
+É a classe que trata os erros em tempo de execução.
+* ResourceNotFoundException - É chamada caso o usuário tente acessar um recurso da API que não existe, expl: Usuário busca um ID que não existe.
+* DataBaseException - É chamado caso o usuário tente salvar ou alterar algo do Banco de Dados incorretamente, expl: Passar Json inválido ao salvar novo Log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

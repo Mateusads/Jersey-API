@@ -1,0 +1,18 @@
+INFO |2020-06-25 10:54:02-0325| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute Parametros aplicados: 
+INFO |2020-06-25 10:54:02-0326| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 1 = 1
+INFO |2020-06-25 10:54:02-0326| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 2 = 1
+INFO |2020-06-25 10:54:02-0327| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 3 = 00001
+INFO |2020-06-25 10:54:02-0329| com.cingo.cingohc.sistemas.util.OuterQuery: getObjects Retornando 1 registros do SQL
+INFO |2020-06-25 10:54:02-0398| com.cingo.cingohc.sistemas.util.OuterQuery: getObjects Executando SQL:  SELECT NOME_ABREV, PAIS, DATA_NASCIMENTO, ESTADO, CIDADE, GRAU_INSTRUCAO, ESTADO_CIVIL, SEXO, NOME_PAI, NOME_MAE, ENDERECO, CEP, TELEFONE, EMAIL, CPF, RG, NUMERO_ENDERECO FROM CI_FUNCIONARIO WHERE  COD_EMPRESA = ? AND COD_ESTAB = ? AND MATRICULA = ? 
+INFO |2020-06-25 10:54:02-0399| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute Parametros aplicados: 
+INFO |2020-06-25 10:54:02-0400| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 1 = 1
+INFO |2020-06-25 10:54:02-0400| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 2 = 1
+INFO |2020-06-25 10:54:02-0401| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 3 = 00001
+INFO |2020-06-25 10:54:02-0403| com.cingo.cingohc.sistemas.util.OuterQuery: getObjects Retornando 1 registros do SQL
+INFO |2020-06-25 10:54:02-0475| com.cingo.cingohc.sistemas.util.OuterQuery: getObjects Executando SQL:  SELECT COD_EMPRESA, COD_ESTAB, MATRICULA, NOME, COD_CCUSTO, COD_FUNCAO, COD_SINDICATO, COD_UNID_LOTAC, COD_TURNO, COD_USUARIO, CPF, SALARIO, DATA_ADMISSAO, SEXO, PIS, CTPS, DATA_DESLIGAMENTO, ESTADO, BANCO, CONTA, DATA_NASCIMENTO, COD_TABSAL, TIPO_FUNCIONARIO, SERIE_CTPS, TITULO_ELEITOR, RESERVISTA, CARTAO_SUS, FAIXA_SAL, NIVEL_SAL, PCD, TIPO_MDO FROM CI_FUNCIONARIO WHERE  COD_EMPRESA = ? AND COD_ESTAB = ? AND MATRICULA = ?  ORDER BY DATA_DESLIGAMENTO DESC 
+INFO |2020-06-25 10:54:02-0476| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute Parametros aplicados: 
+INFO |2020-06-25 10:54:02-0476| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 1 = 1
+INFO |2020-06-25 10:54:02-0477| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 2 = 1
+INFO |2020-06-25 10:54:02-0478| com.cingo.cingohc.sistemas.util.OuterQuery$2: execute 3 = 00001
+INFO |2020-06-25 10:54:02-0480| com.cingo.cingohc.sistemas.util.OuterQuery: getObjects Retornando 1 registros do SQL
+INFO |2020-06-25 10:54:02-0484| com.cingo.cingohc.sistemas.rest.CarregarFotoUsuario: getFotoUsuario URL : https://integrahml.gsinima.com.br/social/api/rest/social/image/profile/paulo@gsinima.com.br/LARGE_PICTURE
