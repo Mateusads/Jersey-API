@@ -4,15 +4,11 @@ import com.cingo.logstore.entity.Log;
 import com.cingo.logstore.repostory.LogRepository;
 import com.cingo.logstore.services.exceptions.DataBaseException;
 import com.cingo.logstore.services.exceptions.ResourceNotFoundException;
-import lombok.AllArgsConstructor;
-
 import java.util.List;
 import java.util.Optional;
 
-@AllArgsConstructor
 public class LogService {
-
-    private final LogRepository repository;
+    private LogRepository repository = new LogRepository();
 
     public List<Log> findAllOrdened() {
         List<Log> entity = repository.findAllOrdened();
@@ -57,5 +53,7 @@ public class LogService {
         } catch (Exception e) {
             throw new DataBaseException("Não foi possível remover esse Log ");
         }
+
+
     }
 }
