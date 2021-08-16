@@ -19,9 +19,7 @@ import com.cingo.logstore.services.LogService;
 @Consumes(MediaType.APPLICATION_JSON)
 public class LogResource {
 
-    @Context
-    private HttpServletRequest httpRequest;
-    private LogService service = new LogService();
+    private LogService service;
 
     @GET
     public List<LogResponseDTO> getLogs() {

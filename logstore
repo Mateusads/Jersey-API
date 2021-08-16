@@ -1,0 +1,66 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.cingo:logstore:war:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.version' for org.projectlombok:lombok:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 115, column 13
+[WARNING] 'dependencies.dependency.version' for junit:junit:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 121, column 22
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 141, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 134, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------------< com.cingo:logstore >-------------------------
+[INFO] Building logstore 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/projectlombok/lombok/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/projectlombok/lombok/maven-metadata.xml (1.8 kB at 1.3 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/maven-metadata.xml (1.3 kB at 4.8 kB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ logstore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ logstore ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ logstore ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/mateus/Documentos/ProjetoCingo/logstore/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ logstore ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/mateus/Documentos/ProjetoCingo/logstore/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ logstore ---
+[INFO] Surefire report directory: /home/mateus/Documentos/ProjetoCingo/logstore/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ logstore ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [logstore] in [/home/mateus/Documentos/ProjetoCingo/logstore/target/logstore-0.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/mateus/Documentos/ProjetoCingo/logstore/WebContent]
+[INFO] Webapp assembled in [236 msecs]
+[INFO] Building war: /home/mateus/Documentos/ProjetoCingo/logstore/target/logstore-0.0.1-SNAPSHOT.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ logstore ---
+[INFO] Installing /home/mateus/Documentos/ProjetoCingo/logstore/target/logstore-0.0.1-SNAPSHOT.war to /home/mateus/.m2/repository/com/cingo/logstore/0.0.1-SNAPSHOT/logstore-0.0.1-SNAPSHOT.war
+[INFO] Installing /home/mateus/Documentos/ProjetoCingo/logstore/pom.xml to /home/mateus/.m2/repository/com/cingo/logstore/0.0.1-SNAPSHOT/logstore-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.210 s
+[INFO] Finished at: 2021-08-15T16:47:07-03:00
+[INFO] ------------------------------------------------------------------------
