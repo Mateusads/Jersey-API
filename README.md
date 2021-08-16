@@ -1,5 +1,34 @@
-# logstorage
-Teste de candidatos para vagas de desenvolvedores para Cingo (www.cingo.com.br).
+# Projeto para leitura e armazenamento de Logs
+
+API Rest em Jersey usando banco de dados Postgres, Maven.
+
+Para usar os caminhos rest os link são.
+
+@GET
+http://localhost:8080/logstore-0.0.1-SNAPSHOT/log -> Exibe todos os logs salvo no banco.
+
+@GET
+http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/{id} -> {id} deve ser um numero inteiro que corresponde ao id de um log, nesse caminho será exibido somente o LOG com o {id}
+
+@POST
+http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/ -> No caminho raiz como no Get, usando post e um Json como exemplo abaixo, será inserido no banco o Log, e a quantidade de vezes inserido é somado na suas ocorrências.
+    {
+
+        "content": "LOG TESTE POST : 2 = 2"
+    }
+
+@PUT
+http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/{id} -> {id} deve ser um numero inteiro que corresponde ao id de um log.
+Usando put será atualizado o Log, conforme id solicitado no endereço, usando Json como exemplo abaixo.
+    {
+
+        "content": "LOG TESTE PUT : 8 = 2"
+    }
+
+@DELETE
+http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/{id} -> {id} deve ser um numero inteiro que corresponde ao id de um log.
+Usando o metódo DELETE é somente colocar o id do LOG a ser excluido, OBS: Esse método não traz retorno quando feito com sucesso. 
+
 
 # Pré-requisitos para execução
 1. Maven 3.6.3
@@ -9,9 +38,15 @@ Teste de candidatos para vagas de desenvolvedores para Cingo (www.cingo.com.br).
 
 # Executar projeto
 1. Baixar o projeto para disco local.
+
 2. Ajustar os dados <local_path>\logstorage\src\main\resources\META-INF\persistence.xml e alterar para os dados de conexão para seu banco de dados local.
+
 3. Acessar a pasta do projeto com cmd ou similar e executar a linha de comando "mvn clean install"
+
 4. Acessar a pasta target criada na pasta do projeto e fazer o deploy do .war gerado na sua instalação local do Apache Tomcat 9
+    1. Para fazer o deploy no tomcat - Copie o logstore-0.0.1-SNAPSHOT.war criado na pasta target do projeto e cole na pasta webapp do seu Tomcat.
+    2. Vá até a pasta /bin do Tomcat execulte o comando (Linux - sh ./startup.sh) ou (Windowns - abrir o arquivo startup.bat)
+
 5. Para testar se a aplicação subiu corretamente acesse http://localhost:8080/logstore-0.0.1-SNAPSHOT/log e verifique se a resposta é um JSON similar ao abaixo: 
 
 [{
@@ -60,8 +95,23 @@ Comum em API MVC o service deve conter a lógica da regra de negócio.
 * DataBaseException - É chamado caso o usuário tente salvar ou alterar algo do Banco de Dados incorretamente, expl: Passar Json inválido ao salvar novo Log.
 
 
+# MELHORIAS A SEREM FEITAS...
+Todo software não funciona igualmente em todos os S.O. para isso em projetos como esse é comum usado Docker.
+1. Docker são maquinas virtuais como (Container) que sobem configurações específicas para rodar o projeto, assim evitando erros de compilação entre uma maquina e outra.
+Com Docker instalado na maquina, não precisa nem instalar os pré requisitos que nele já sobe tudo, como Postgres, Tomcat, Maven entre outros conforme as configurações.
+
+Foi brevemente iniciado as configurações neste projeto, como Dockerfile e Docker-compose. 
+Para integração completa com Docker deverá verificar o acesso ao bando que não está autenticando.
+Com essa melhoria acredito que além de mais prático, ficaria bem completo o projeto..
+
+# FRONTEND...
+
+Os aquivos do front estão certos para exibir os logs em sua URL principal, com JS busca o caminho da API e preenche o formulário HTML para exibir.
+Como melhoria seria integrar as funções ja existente na API como (INSERÇÃO, ALTERAÇÃO, DELEÇÃO) de dados, para não precisar fazer PUT, POST e DELETE por outros aplicativos como (POSTMAN) ou usar esses recursos no navegador.
 
 
+# logstorage
+Teste de candidatos para vagas de desenvolvedores para Cingo (www.cingo.com.br).
 
 
 
