@@ -1,7 +1,7 @@
 
 # DOCKER - DOCKER-COMPOSE - Rodar com poucos pré-requisitos
 
-Os arquivos do Docker são estão prontos, podem ser alterado para algumas eventualidades.
+Os arquivos do Docker estão prontos, podem ser alterado para algumas eventualidades.
 Para rodar não precisa ter muitos pré-requisitos, se está com o Docker em sua maquina sendo linux(qualquer distribuição) ou windowns rode os comandos. 
 
 ❯ mvn clean install
@@ -9,6 +9,8 @@ Para rodar não precisa ter muitos pré-requisitos, se está com o Docker em sua
 ❯ docker build -t logstore .
 
 ❯ docker-compose up
+
+![alt text](https://ifish.site/image/docker_02/docker.png)
 
 
 Caso não tenha o docker instalado veja como instalar em https://docs.docker.com/desktop/windows/install/
