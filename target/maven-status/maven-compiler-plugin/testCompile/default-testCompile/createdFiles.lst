@@ -1,2 +1,3 @@
+com/cingo/logstore/services/LogServiceTest.class
 com/cingo/logstore/entity/factory/impl/DefaultLogFactoryTest.class
-com/cingo/logstore/services/LogServiceTeste.class
+com/cingo/logstore/job/impl/LogStoreJobTest.class

@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 public class LogStoreEntityManagerFactory {
 
 	private static EntityManagerFactory instance;
-	
+
 	public static EntityManagerFactory getInstance(){
 		if (instance == null){
 			instance = Persistence.createEntityManagerFactory("logstore");

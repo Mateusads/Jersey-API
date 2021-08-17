@@ -6,12 +6,14 @@ volumes:
 
 services:
   sampledb:
-    image: postgres:13
+    image: postgres:13.4-alpine3.14
     restart: always
     environment:
       POSTGRES_PASSWORD: 1234567
-      POSTGRES_USER: postgres
       POSTGRES_DB: logstore
+      POSTGRES_USER: postgres
+    ports:
+      - 5433:5432
 
   adminer:
     image: adminer:4.7.9
@@ -20,9 +22,9 @@ services:
       - 8111:8080
 
   app:
-    image: logstoredocker
+    image: logstore
     ports:
-      - 8080:8080
+      - 8088:8080
     environment:
       DB_URL: jdbc:postgresql://sampledb:5432/logstore
       DB_USER: postgres

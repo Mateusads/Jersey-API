@@ -1,3 +1,21 @@
+
+# DOCKER - DOCKER-COMPOSE - Rodar com poucos pré-requisitos
+
+Os arquivos do Docker são estão prontos, podem ser alterado para algumas eventualidades.
+Para rodar não precisa ter muitos pré-requisitos, se está com o Docker em sua maquina sendo linux(qualquer distribuição) ou windowns rode os comandos. 
+
+❯ mvn clean install
+
+❯ docker build -t logstore .
+
+❯ docker-compose up
+
+
+Caso não tenha o docker instalado veja como instalar em https://docs.docker.com/desktop/windows/install/
+Ou verifique os pré-requisitos e modo de execução abaixo.
+
+
+
 # Projeto para leitura e armazenamento de Logs
 
 API Rest em Jersey usando banco de dados Postgres, Maven.
@@ -12,6 +30,7 @@ http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/{id} -> {id} deve ser um numer
 
 @POST
 http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/ -> No caminho raiz como no Get, usando post e um Json como exemplo abaixo, será inserido no banco o Log, e a quantidade de vezes inserido é somado na suas ocorrências.
+
     {
 
         "content": "LOG TESTE POST : 2 = 2"
@@ -20,6 +39,7 @@ http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/ -> No caminho raiz como no Ge
 @PUT
 http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/{id} -> {id} deve ser um numero inteiro que corresponde ao id de um log.
 Usando put será atualizado o Log, conforme id solicitado no endereço, usando Json como exemplo abaixo.
+
     {
 
         "content": "LOG TESTE PUT : 8 = 2"
@@ -28,6 +48,14 @@ Usando put será atualizado o Log, conforme id solicitado no endereço, usando J
 @DELETE
 http://localhost:8080/logstore-0.0.1-SNAPSHOT/log/{id} -> {id} deve ser um numero inteiro que corresponde ao id de um log.
 Usando o metódo DELETE é somente colocar o id do LOG a ser excluido, OBS: Esse método não traz retorno quando feito com sucesso. 
+
+# FRONTEND - (Html + JS)
+
+Arquivo localizado dentro do projeto na pasta logstore/WebContent/WEB-CONT -> logstore.html
+
+Ao lado esquerdo da página foi inserido campos para buscar, inserir, atualizar e deletar Logs.
+Sem precisar passar por várias paginas HTML todos os comandos são com JavaScript no framework JQuery.
+Usando Ajax a pagina atualiza sozinha quando precisar atualizar os dados, e faz a inserção de dados.
 
 
 # Pré-requisitos para execução
@@ -93,21 +121,6 @@ Comum em API MVC o service deve conter a lógica da regra de negócio.
 É a classe que trata os erros em tempo de execução.
 * ResourceNotFoundException - É chamada caso o usuário tente acessar um recurso da API que não existe, expl: Usuário busca um ID que não existe.
 * DataBaseException - É chamado caso o usuário tente salvar ou alterar algo do Banco de Dados incorretamente, expl: Passar Json inválido ao salvar novo Log.
-
-
-# MELHORIAS A SEREM FEITAS...
-Todo software não funciona igualmente em todos os S.O. para isso em projetos como esse é comum usado Docker.
-1. Docker são maquinas virtuais como (Container) que sobem configurações específicas para rodar o projeto, assim evitando erros de compilação entre uma maquina e outra.
-Com Docker instalado na maquina, não precisa nem instalar os pré requisitos que nele já sobe tudo, como Postgres, Tomcat, Maven entre outros conforme as configurações.
-
-Foi brevemente iniciado as configurações neste projeto, como Dockerfile e Docker-compose. 
-Para integração completa com Docker deverá verificar o acesso ao bando que não está autenticando.
-Com essa melhoria acredito que além de mais prático, ficaria bem completo o projeto..
-
-# FRONTEND...
-
-Os aquivos do front estão certos para exibir os logs em sua URL principal, com JS busca o caminho da API e preenche o formulário HTML para exibir.
-Como melhoria seria integrar as funções ja existente na API como (INSERÇÃO, ALTERAÇÃO, DELEÇÃO) de dados, para não precisar fazer PUT, POST e DELETE por outros aplicativos como (POSTMAN) ou usar esses recursos no navegador.
 
 
 # logstorage
